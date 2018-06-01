@@ -1,0 +1,23 @@
+{
+    "preprocess": {
+        "indir": "dataset",
+        "outdir": "output/preprocessed"
+    },
+    "feature": {
+        "indir": "output/preprocessed",
+        "outdir": "feature/feature.csv"
+    },
+    "classifier": {
+        "name": "knn",
+        "indir": "feature/feature.csv",
+        "outdir": "model/classifier.p",
+        "parameters": {
+            "k": [5,7,9,11,13]
+        }
+    },
+    "identify": {
+        "cascade": "cascade/cascade.xml",
+        "indir": "input",
+        "model": "model/svm_model.p"
+    }
+}
